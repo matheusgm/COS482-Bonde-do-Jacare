@@ -1,0 +1,14 @@
+Description
+Template for creating the Sprint Retrospective artifact.
+
+# Retrospective of the Sprint < number >
+Meeting held on < date >.
+
+Responsible: < Name >.
+
+## Strengths:
+    < positive Point 1 >
+## Weaknesses:
+    < negative point 1 >
+## Improvement Points:
+    < improvement point 1 >

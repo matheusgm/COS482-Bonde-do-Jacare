@@ -1,0 +1,16 @@
+Description
+Template for creating the Lessons Learned artifact.
+
+# Lessons Learned from the Project
+Meeting held on < date >.
+
+Responsible: < Name >.
+
+## What were the strengths of the project?
+    < item 1 >
+    < item 2 >
+## What were the weaknesses of the project?
+    < item 1 >
+    < item 2 >
+## Lessons learned for future projects:
+    < Mention the most relevant lessons learned, describing actions taken and recommendations for other projects. >
