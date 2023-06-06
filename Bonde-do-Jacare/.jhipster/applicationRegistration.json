@@ -1,0 +1,23 @@
+"fields":[
+    {
+        "fieldName":"dateAndTime",
+        "fieldType":"LocalDate"
+    },
+    {
+        "fieldName":"vaccineType",
+        "fieldType":"String"
+    },
+    {
+        "fieldName":"applicator",
+        "fieldType":"String"
+    }
+],
+[
+    "relationships":[],
+    "entityType":"process-binding",
+    "processBpmnId"
+    "readOnly":true,
+    "pagination":"no",
+    "name":"registration",
+    "skipFakeData":true
+]
