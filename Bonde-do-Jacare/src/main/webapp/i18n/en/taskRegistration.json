@@ -1,0 +1,28 @@
+{
+  "bondeDoJacareApp": {
+    "taskRegistration": {
+      "home": {
+        "title": "Task Registrations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Task Registration",
+        "createOrEditLabel": "Create or edit a Task Registration",
+        "notFound": "No Task Registrations found"
+      },
+      "created": "A new Task Registration is created with identifier {{ param }}",
+      "updated": "A Task Registration is updated with identifier {{ param }}",
+      "deleted": "A Task Registration is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Task Registration {{ id }}?"
+      },
+      "detail": {
+        "title": "Task Registration"
+      },
+      "id": "ID",
+      "name": "Name",
+      "birthDate": "Birth Date",
+      "job": "Job",
+      "phoneNumber": "Phone Number",
+      "address": "Address"
+    }
+  }
+}

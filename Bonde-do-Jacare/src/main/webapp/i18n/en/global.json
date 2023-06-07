@@ -12,6 +12,11 @@
         "processInstance": "Process Instances",
         "taskInstance": "All Tasks",
         "myCandidateTasks": "My Tasks",
+        "vaccination": "Vaccination",
+        "taskApplication": "Task Application",
+        "taskRegistration": "Task Registration",
+        "vaccinationProcess": "Vaccination Process",
+        "vaccinationStartForm": "Vaccination Start Form",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

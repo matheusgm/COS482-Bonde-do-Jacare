@@ -52,6 +52,8 @@
     "jwtSecretKey": "YTIwMDVjMWIzNGQxMzI4M2Y5ZmM4MTdhMjViNGE2Y2UxYTc4YWMxODRmNTE3MjUwMjFhMTc4OWRiMzk0OGJhNDVjYzM5MDg0YTI1ZGJlYWJmNWUzNDYzZTFhMDg1ZmM2MWQ0NTUzMmY4MDFhY2FmMzc2MTk1NjZkZjljZThkZGE=",
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
-    "languages": ["en"]
+    "languages": ["en"],
+    "lastLiquibaseTimestamp": 1686158758000,
+    "entities": ["Vaccination"]
   }
 }

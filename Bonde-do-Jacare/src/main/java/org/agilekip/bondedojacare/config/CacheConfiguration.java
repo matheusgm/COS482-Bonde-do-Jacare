@@ -48,6 +48,8 @@ public class CacheConfiguration {
             createCache(cm, org.agilekip.bondedojacare.domain.User.class.getName());
             createCache(cm, org.agilekip.bondedojacare.domain.Authority.class.getName());
             createCache(cm, org.agilekip.bondedojacare.domain.User.class.getName() + ".authorities");
+            createCache(cm, org.agilekip.bondedojacare.domain.Vaccination.class.getName());
+            createCache(cm, org.agilekip.bondedojacare.domain.VaccinationProcess.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

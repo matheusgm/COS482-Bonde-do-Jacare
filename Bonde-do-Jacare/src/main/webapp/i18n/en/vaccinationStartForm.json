@@ -1,0 +1,26 @@
+{
+  "bondeDoJacareApp": {
+    "vaccinationStartForm": {
+      "home": {
+        "title": "Vaccination Start Forms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Vaccination Start Form",
+        "createOrEditLabel": "Create or edit a Vaccination Start Form",
+        "notFound": "No Vaccination Start Forms found"
+      },
+      "created": "A new Vaccination Start Form is created with identifier {{ param }}",
+      "updated": "A Vaccination Start Form is updated with identifier {{ param }}",
+      "deleted": "A Vaccination Start Form is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Vaccination Start Form {{ id }}?"
+      },
+      "detail": {
+        "title": "Vaccination Start Form"
+      },
+      "id": "ID",
+      "name": "Name",
+      "birthDate": "Birth Date",
+      "job": "Job"
+    }
+  }
+}

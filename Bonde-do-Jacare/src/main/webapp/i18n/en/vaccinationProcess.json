@@ -1,0 +1,31 @@
+{
+  "bondeDoJacareApp": {
+    "vaccinationProcess": {
+      "home": {
+        "title": "Vaccination Processes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Vaccination Process",
+        "createOrEditLabel": "Create or edit a Vaccination Process",
+        "notFound": "No Vaccination Processes found"
+      },
+      "created": "A new Vaccination Process is created with identifier {{ param }}",
+      "updated": "A Vaccination Process is updated with identifier {{ param }}",
+      "deleted": "A Vaccination Process is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Vaccination Process {{ id }}?"
+      },
+      "detail": {
+        "title": "Vaccination Process"
+      },
+      "id": "ID",
+      "name": "Name",
+      "birthDate": "Birth Date",
+      "job": "Job",
+      "phoneNumber": "Phone Number",
+      "address": "Address",
+      "dateAndTime": "Date And Time",
+      "vaccineType": "Vaccine Type",
+      "applicator": "Applicator"
+    }
+  }
+}

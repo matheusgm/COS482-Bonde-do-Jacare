@@ -1,0 +1,23 @@
+{
+  "bondeDoJacareApp": {
+    "vaccination": {
+      "home": {
+        "title": "Vaccinations",
+        "refreshListLabel": "Refresh list",
+        "notFound": "No Vaccinations found"
+      },
+      "detail": {
+        "title": "Vaccination"
+      },
+      "id": "ID",
+      "name": "Name",
+      "birthDate": "Birth Date",
+      "job": "Job",
+      "phoneNumber": "Phone Number",
+      "address": "Address",
+      "dateAndTime": "Date And Time",
+      "vaccineType": "Vaccine Type",
+      "applicator": "Applicator"
+    }
+  }
+}

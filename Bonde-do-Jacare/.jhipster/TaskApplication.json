@@ -1,28 +1,55 @@
 {
-    "fields": [
-        {
-            "fieldName":"dateAndTime",
-            "fieldType":"LocalDate"
-        },
-        {
-            "fieldName":"vaccineType",
-            "fieldType":"String"
-        },
-        {
-            "fieldName":"applicator",
-            "fieldType":"String"
-        }
-    ],
-    "relationships": [],
-    "entityType": "user-task-form",
-    "processBpmnId": "VaccinationProcess",
-    "processEntityName": "VaccinationProcess",
-    "taskBpmnId": "Application",
-    "domainEntityName": "Vaccination",
-    "service": "serviceClass",
-    "dto": "mapstruct",
-    "jpaMetamodelFiltering": false,
-    "readOnly": false,
-    "pagination": "no",
-    "name": "TaskApplication"
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "birthDate",
+      "fieldType": "LocalDate",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "job",
+      "fieldType": "String",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "dateAndTime",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "vaccineType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "applicator",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "entityType": "user-task-form",
+  "processBpmnId": "VaccinationProcess",
+  "processEntityName": "VaccinationProcess",
+  "taskBpmnId": "Application",
+  "domainEntityName": "Vaccination",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "name": "TaskApplication",
+  "skipFakeData": true,
+  "changelogDate": "20230607172555"
 }
