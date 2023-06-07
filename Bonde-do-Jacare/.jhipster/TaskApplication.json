@@ -1,0 +1,28 @@
+{
+    "fields": [
+        {
+            "fieldName":"dateAndTime",
+            "fieldType":"LocalDate"
+        },
+        {
+            "fieldName":"vaccineType",
+            "fieldType":"String"
+        },
+        {
+            "fieldName":"applicator",
+            "fieldType":"String"
+        }
+    ],
+    "relationships": [],
+    "entityType": "user-task-form",
+    "processBpmnId": "VaccinationProcess",
+    "processEntityName": "VaccinationProcess",
+    "taskBpmnId": "Application",
+    "domainEntityName": "Vaccination",
+    "service": "serviceClass",
+    "dto": "mapstruct",
+    "jpaMetamodelFiltering": false,
+    "readOnly": false,
+    "pagination": "no",
+    "name": "TaskApplication"
+}

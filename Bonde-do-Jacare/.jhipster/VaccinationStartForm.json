@@ -1,0 +1,28 @@
+{
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "birthDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "job",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "entityType": "start-form",
+    "processBpmnId": "VaccinationProcess",
+    "processEntityName": "VaccinationProcess",
+    "domainEntityName": "Vaccination",
+    "service": "serviceClass",
+    "dto": "mapstruct",
+    "jpaMetamodelFiltering": false,
+    "readOnly": false,
+    "pagination": "no",
+    "name": "VaccinationStartForm",
+    "skipFakeData": true
+}
