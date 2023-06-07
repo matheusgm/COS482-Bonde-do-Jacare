@@ -20,7 +20,7 @@
         },
         {
             "fieldName":"phoneNumber",
-            "filedType":"String"
+            "fieldType":"String"
         },
         {
             "fieldName":"address",
