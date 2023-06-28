@@ -13,7 +13,7 @@ public class VaccinationDTO implements Serializable {
 
     private String name;
 
-    private LocalDate birthDate;
+    private Integer age;
 
     private String job;
 
@@ -26,6 +26,8 @@ public class VaccinationDTO implements Serializable {
     private String vaccineType;
 
     private String applicator;
+
+    private String endStatus;
 
     public Long getId() {
         return id;
@@ -43,12 +45,12 @@ public class VaccinationDTO implements Serializable {
         this.name = name;
     }
 
-    public LocalDate getBirthDate() {
-        return birthDate;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public String getJob() {
@@ -99,6 +101,14 @@ public class VaccinationDTO implements Serializable {
         this.applicator = applicator;
     }
 
+    public String getEndStatus() {
+        return endStatus;
+    }
+
+    public void setEndStatus(String endStatus) {
+        this.endStatus = endStatus;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -126,13 +136,14 @@ public class VaccinationDTO implements Serializable {
         return "VaccinationDTO{" +
             "id=" + getId() +
             ", name='" + getName() + "'" +
-            ", birthDate='" + getBirthDate() + "'" +
+            ", age=" + getAge() +
             ", job='" + getJob() + "'" +
             ", phoneNumber='" + getPhoneNumber() + "'" +
             ", address='" + getAddress() + "'" +
             ", dateAndTime='" + getDateAndTime() + "'" +
             ", vaccineType='" + getVaccineType() + "'" +
             ", applicator='" + getApplicator() + "'" +
+            ", endStatus='" + getEndStatus() + "'" +
             "}";
     }
 }

@@ -19,13 +19,14 @@
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
             <th scope="row"><span v-text="$t('bondeDoJacareApp.vaccination.name')">Name</span></th>
-            <th scope="row"><span v-text="$t('bondeDoJacareApp.vaccination.birthDate')">Birth Date</span></th>
+            <th scope="row"><span v-text="$t('bondeDoJacareApp.vaccination.age')">Age</span></th>
             <th scope="row"><span v-text="$t('bondeDoJacareApp.vaccination.job')">Job</span></th>
             <th scope="row"><span v-text="$t('bondeDoJacareApp.vaccination.phoneNumber')">Phone Number</span></th>
             <th scope="row"><span v-text="$t('bondeDoJacareApp.vaccination.address')">Address</span></th>
             <th scope="row"><span v-text="$t('bondeDoJacareApp.vaccination.dateAndTime')">Date And Time</span></th>
             <th scope="row"><span v-text="$t('bondeDoJacareApp.vaccination.vaccineType')">Vaccine Type</span></th>
             <th scope="row"><span v-text="$t('bondeDoJacareApp.vaccination.applicator')">Applicator</span></th>
+            <th scope="row"><span v-text="$t('bondeDoJacareApp.vaccination.endStatus')">End Status</span></th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -35,13 +36,14 @@
               <router-link :to="{ name: 'VaccinationView', params: { vaccinationId: vaccination.id } }">{{ vaccination.id }}</router-link>
             </td>
             <td>{{ vaccination.name }}</td>
-            <td>{{ vaccination.birthDate }}</td>
+            <td>{{ vaccination.age }}</td>
             <td>{{ vaccination.job }}</td>
             <td>{{ vaccination.phoneNumber }}</td>
             <td>{{ vaccination.address }}</td>
             <td>{{ vaccination.dateAndTime }}</td>
             <td>{{ vaccination.vaccineType }}</td>
             <td>{{ vaccination.applicator }}</td>
+            <td>{{ vaccination.endStatus }}</td>
             <td class="text-right">
               <div class="btn-group">
                 <router-link :to="{ name: 'VaccinationView', params: { vaccinationId: vaccination.id } }" custom v-slot="{ navigate }">

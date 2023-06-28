@@ -5,8 +5,8 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "birthDate",
-      "fieldType": "LocalDate"
+      "fieldName": "age",
+      "fieldType": "Integer"
     },
     {
       "fieldName": "job",
@@ -30,6 +30,10 @@
     },
     {
       "fieldName": "applicator",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "endStatus",
       "fieldType": "String"
     }
   ],

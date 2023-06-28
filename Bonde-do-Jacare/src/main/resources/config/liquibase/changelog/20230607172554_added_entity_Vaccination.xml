@@ -17,7 +17,7 @@
             <column name="name" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="birth_date" type="date">
+            <column name="age" type="integer">
                 <constraints nullable="true" />
             </column>
             <column name="job" type="varchar(255)">
@@ -36,6 +36,9 @@
                 <constraints nullable="true" />
             </column>
             <column name="applicator" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="end_status" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->

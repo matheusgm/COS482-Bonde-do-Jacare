@@ -74,7 +74,7 @@ public class TaskApplicationService {
             .findOne(taskApplicationContext.getVaccinationProcess().getVaccination().getId())
             .orElseThrow();
         vaccinationDTO.setName(taskApplicationContext.getVaccinationProcess().getVaccination().getName());
-        vaccinationDTO.setBirthDate(taskApplicationContext.getVaccinationProcess().getVaccination().getBirthDate());
+        vaccinationDTO.setAge(taskApplicationContext.getVaccinationProcess().getVaccination().getAge());
         vaccinationDTO.setJob(taskApplicationContext.getVaccinationProcess().getVaccination().getJob());
         vaccinationDTO.setPhoneNumber(taskApplicationContext.getVaccinationProcess().getVaccination().getPhoneNumber());
         vaccinationDTO.setAddress(taskApplicationContext.getVaccinationProcess().getVaccination().getAddress());

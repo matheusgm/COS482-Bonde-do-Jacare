@@ -6,8 +6,8 @@
       "fieldReadOnly": true
     },
     {
-      "fieldName": "birthDate",
-      "fieldType": "LocalDate",
+      "fieldName": "age",
+      "fieldType": "Integer",
       "fieldReadOnly": true
     },
     {

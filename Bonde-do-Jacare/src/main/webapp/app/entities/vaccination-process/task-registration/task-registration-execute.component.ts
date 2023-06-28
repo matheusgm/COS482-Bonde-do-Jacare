@@ -8,7 +8,7 @@ const validations: any = {
     vaccinationProcess: {
       vaccination: {
         name: {},
-        birthDate: {},
+        age: {},
         job: {},
         phoneNumber: {},
         address: {},

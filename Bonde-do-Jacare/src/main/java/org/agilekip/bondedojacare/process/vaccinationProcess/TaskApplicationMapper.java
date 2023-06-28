@@ -17,7 +17,7 @@ public interface TaskApplicationMapper {
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "id", source = "id")
     @Mapping(target = "name", source = "name")
-    @Mapping(target = "birthDate", source = "birthDate")
+    @Mapping(target = "age", source = "age")
     @Mapping(target = "job", source = "job")
     @Mapping(target = "phoneNumber", source = "phoneNumber")
     @Mapping(target = "address", source = "address")

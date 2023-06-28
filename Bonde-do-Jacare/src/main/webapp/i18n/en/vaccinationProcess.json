@@ -19,13 +19,14 @@
       },
       "id": "ID",
       "name": "Name",
-      "birthDate": "Birth Date",
+      "age": "Age",
       "job": "Job",
       "phoneNumber": "Phone Number",
       "address": "Address",
       "dateAndTime": "Date And Time",
       "vaccineType": "Vaccine Type",
-      "applicator": "Applicator"
+      "applicator": "Applicator",
+      "endStatus": "End Status"
     }
   }
 }

@@ -4,9 +4,6 @@
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>Flow_055i1ln</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:endEvent id="Event_1sxjfzh" name="Não Vacinado">
-      <bpmn:incoming>Flow_17191bj</bpmn:incoming>
-    </bpmn:endEvent>
     <bpmn:userTask id="Registration" name="Cadastro">
       <bpmn:incoming>Flow_055i1ln</bpmn:incoming>
       <bpmn:outgoing>Flow_1mdm3px</bpmn:outgoing>
@@ -14,32 +11,16 @@
     <bpmn:exclusiveGateway id="Gateway_0ed0vml" camunda:asyncBefore="true">
       <bpmn:extensionElements />
       <bpmn:incoming>Flow_0a6tlo8</bpmn:incoming>
-      <bpmn:outgoing>Flow_17191bj</bpmn:outgoing>
       <bpmn:outgoing>Flow_0vx1yq3</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0iap4c9</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:sequenceFlow id="Flow_17191bj" name="No" sourceRef="Gateway_0ed0vml" targetRef="Event_1sxjfzh">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{No}</bpmn:conditionExpression>
-    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_055i1ln" sourceRef="StartEvent_1" targetRef="Registration" />
-    <bpmn:manualTask id="Activity_10jeldx" name="Aplicação da Vacina">
-      <bpmn:incoming>Flow_14x1m56</bpmn:incoming>
-      <bpmn:outgoing>Flow_1q4gjwl</bpmn:outgoing>
-    </bpmn:manualTask>
-    <bpmn:manualTask id="Activity_0h8vbcy" name="Preparação da Vacina">
-      <bpmn:incoming>Flow_0vx1yq3</bpmn:incoming>
-      <bpmn:outgoing>Flow_14x1m56</bpmn:outgoing>
-    </bpmn:manualTask>
-    <bpmn:sequenceFlow id="Flow_0wsyydq" sourceRef="Activity_1nqqhtf" targetRef="Event_118cav3" />
     <bpmn:sequenceFlow id="Flow_14x1m56" sourceRef="Activity_0h8vbcy" targetRef="Activity_10jeldx" />
-    <bpmn:endEvent id="Event_118cav3" name="Vacinado">
-      <bpmn:incoming>Flow_0wsyydq</bpmn:incoming>
+    <bpmn:endEvent id="Event_118cav3" name="Fim">
+      <bpmn:incoming>Flow_1lze1eb</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:manualTask id="Activity_1nqqhtf" name="Avaliação da reação da vacina">
-      <bpmn:incoming>Flow_1hqw0f5</bpmn:incoming>
-      <bpmn:outgoing>Flow_0wsyydq</bpmn:outgoing>
-    </bpmn:manualTask>
     <bpmn:sequenceFlow id="Flow_0vx1yq3" name="Yes" sourceRef="Gateway_0ed0vml" targetRef="Activity_0h8vbcy">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{Yes}</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${pi.getVaccination().getAge() &lt; 18 || pi.getVaccination().getAge() &gt;= 60}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:userTask id="Application" name="Registro da aplicação">
       <bpmn:incoming>Flow_1q4gjwl</bpmn:incoming>
@@ -48,22 +29,48 @@
     <bpmn:sequenceFlow id="Flow_1q4gjwl" sourceRef="Activity_10jeldx" targetRef="Application" />
     <bpmn:sequenceFlow id="Flow_1hqw0f5" sourceRef="Application" targetRef="Activity_1nqqhtf" />
     <bpmn:sequenceFlow id="Flow_1mdm3px" sourceRef="Registration" targetRef="Activity_1ye0y4w" />
-    <bpmn:sequenceFlow id="Flow_0a6tlo8" sourceRef="Activity_1ye0y4w" targetRef="Gateway_0ed0vml" />
+    <bpmn:sequenceFlow id="Flow_0a6tlo8" name="Can Vaccinate?" sourceRef="Activity_1ye0y4w" targetRef="Gateway_0ed0vml" />
     <bpmn:manualTask id="Activity_1ye0y4w" name="Análise se o paciente atende os requisitos minimos">
       <bpmn:incoming>Flow_1mdm3px</bpmn:incoming>
       <bpmn:outgoing>Flow_0a6tlo8</bpmn:outgoing>
     </bpmn:manualTask>
+    <bpmn:sequenceFlow id="Flow_0iap4c9" name="No" sourceRef="Gateway_0ed0vml" targetRef="Gateway_1p4zq4o">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!(pi.getVaccination().getAge() &lt; 18 || pi.getVaccination().getAge() &gt;= 60)}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:userTask id="Activity_0h8vbcy" name="Preparação da Vacina">
+      <bpmn:incoming>Flow_0vx1yq3</bpmn:incoming>
+      <bpmn:outgoing>Flow_14x1m56</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_10jeldx" name="Aplicação da Vacina">
+      <bpmn:incoming>Flow_14x1m56</bpmn:incoming>
+      <bpmn:outgoing>Flow_1q4gjwl</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_1nqqhtf" name="Avaliação da reação da vacina">
+      <bpmn:incoming>Flow_1hqw0f5</bpmn:incoming>
+      <bpmn:outgoing>Flow_04tclbc</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_14jv6vk" sourceRef="Activity_1q1ukxo" targetRef="Activity_1bj1nkw" />
+    <bpmn:sequenceFlow id="Flow_04tclbc" sourceRef="Activity_1nqqhtf" targetRef="Gateway_1p4zq4o" />
+    <bpmn:serviceTask id="Activity_1q1ukxo" name="Update Status Vacinado" camunda:delegateExpression="${updateStatusDelegate}">
+      <bpmn:incoming>Flow_0r7cb17</bpmn:incoming>
+      <bpmn:outgoing>Flow_14jv6vk</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="Gateway_1p4zq4o" camunda:asyncBefore="true">
+      <bpmn:incoming>Flow_04tclbc</bpmn:incoming>
+      <bpmn:incoming>Flow_0iap4c9</bpmn:incoming>
+      <bpmn:outgoing>Flow_0r7cb17</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0r7cb17" sourceRef="Gateway_1p4zq4o" targetRef="Activity_1q1ukxo" />
+    <bpmn:sequenceFlow id="Flow_1lze1eb" sourceRef="Activity_1bj1nkw" targetRef="Event_118cav3" />
+    <bpmn:userTask id="Activity_1bj1nkw" name="Teste">
+      <bpmn:incoming>Flow_14jv6vk</bpmn:incoming>
+      <bpmn:outgoing>Flow_1lze1eb</bpmn:outgoing>
+    </bpmn:userTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="VaccinationProcess">
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
         <dc:Bounds x="152" y="209" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1sxjfzh_di" bpmnElement="Event_1sxjfzh">
-        <dc:Bounds x="1512" y="112" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1496" y="155" width="69" height="14" />
-        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0gfajzv_di" bpmnElement="Registration">
         <dc:Bounds x="300" y="187" width="100" height="80" />
@@ -72,21 +79,6 @@
       <bpmndi:BPMNShape id="Gateway_0ed0vml_di" bpmnElement="Gateway_0ed0vml" isMarkerVisible="true">
         <dc:Bounds x="695" y="202" width="50" height="50" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_10u8dv9_di" bpmnElement="Activity_10jeldx">
-        <dc:Bounds x="960" y="187" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0wcj4tz_di" bpmnElement="Activity_0h8vbcy">
-        <dc:Bounds x="800" y="187" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_118cav3_di" bpmnElement="Event_118cav3">
-        <dc:Bounds x="1512" y="209" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1508" y="252" width="45" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1tyfuxe_di" bpmnElement="Activity_1nqqhtf">
-        <dc:Bounds x="1320" y="187" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0aapnh3_di" bpmnElement="Application">
         <dc:Bounds x="1140" y="187" width="100" height="80" />
         <bpmndi:BPMNLabel />
@@ -94,21 +86,35 @@
       <bpmndi:BPMNShape id="Activity_05ff2ea_di" bpmnElement="Activity_1ye0y4w">
         <dc:Bounds x="500" y="187" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Flow_17191bj_di" bpmnElement="Flow_17191bj">
-        <di:waypoint x="720" y="202" />
-        <di:waypoint x="720" y="130" />
-        <di:waypoint x="1512" y="130" />
+      <bpmndi:BPMNShape id="Activity_1tttrnb_di" bpmnElement="Activity_0h8vbcy">
+        <dc:Bounds x="800" y="187" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0u0kl9a_di" bpmnElement="Activity_10jeldx">
+        <dc:Bounds x="960" y="187" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0hgwybf_di" bpmnElement="Activity_1nqqhtf">
+        <dc:Bounds x="1320" y="187" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0rfu388" bpmnElement="Gateway_1p4zq4o" isMarkerVisible="true">
+        <dc:Bounds x="1435" y="202" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0lwcif9_di" bpmnElement="Activity_1q1ukxo">
+        <dc:Bounds x="1510" y="187" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_118cav3_di" bpmnElement="Event_118cav3">
+        <dc:Bounds x="1762" y="209" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="880" y="96" width="15" height="14" />
+          <dc:Bounds x="1771" y="252" width="19" height="14" />
         </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1igkcf3_di" bpmnElement="Activity_1bj1nkw">
+        <dc:Bounds x="1630" y="187" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_055i1ln_di" bpmnElement="Flow_055i1ln">
         <di:waypoint x="188" y="227" />
         <di:waypoint x="300" y="227" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0wsyydq_di" bpmnElement="Flow_0wsyydq">
-        <di:waypoint x="1420" y="227" />
-        <di:waypoint x="1512" y="227" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_14x1m56_di" bpmnElement="Flow_14x1m56">
         <di:waypoint x="900" y="227" />
@@ -136,6 +142,34 @@
       <bpmndi:BPMNEdge id="Flow_0a6tlo8_di" bpmnElement="Flow_0a6tlo8">
         <di:waypoint x="600" y="227" />
         <di:waypoint x="695" y="227" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="609" y="209" width="77" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0iap4c9_di" bpmnElement="Flow_0iap4c9">
+        <di:waypoint x="720" y="202" />
+        <di:waypoint x="720" y="130" />
+        <di:waypoint x="1460" y="130" />
+        <di:waypoint x="1460" y="202" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1083" y="112" width="15" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_14jv6vk_di" bpmnElement="Flow_14jv6vk">
+        <di:waypoint x="1610" y="227" />
+        <di:waypoint x="1630" y="227" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_04tclbc_di" bpmnElement="Flow_04tclbc">
+        <di:waypoint x="1420" y="227" />
+        <di:waypoint x="1435" y="227" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0r7cb17_di" bpmnElement="Flow_0r7cb17">
+        <di:waypoint x="1485" y="227" />
+        <di:waypoint x="1510" y="227" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1lze1eb_di" bpmnElement="Flow_1lze1eb">
+        <di:waypoint x="1730" y="227" />
+        <di:waypoint x="1762" y="227" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

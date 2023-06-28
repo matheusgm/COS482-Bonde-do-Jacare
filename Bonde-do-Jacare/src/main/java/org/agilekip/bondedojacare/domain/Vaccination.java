@@ -24,8 +24,8 @@ public class Vaccination implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "birth_date")
-    private LocalDate birthDate;
+    @Column(name = "age")
+    private Integer age;
 
     @Column(name = "job")
     private String job;
@@ -44,6 +44,9 @@ public class Vaccination implements Serializable {
 
     @Column(name = "applicator")
     private String applicator;
+
+    @Column(name = "end_status")
+    private String endStatus;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -72,17 +75,17 @@ public class Vaccination implements Serializable {
         this.name = name;
     }
 
-    public LocalDate getBirthDate() {
-        return this.birthDate;
+    public Integer getAge() {
+        return this.age;
     }
 
-    public Vaccination birthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
+    public Vaccination age(Integer age) {
+        this.age = age;
         return this;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public String getJob() {
@@ -163,6 +166,19 @@ public class Vaccination implements Serializable {
         this.applicator = applicator;
     }
 
+    public String getEndStatus() {
+        return this.endStatus;
+    }
+
+    public Vaccination endStatus(String endStatus) {
+        this.endStatus = endStatus;
+        return this;
+    }
+
+    public void setEndStatus(String endStatus) {
+        this.endStatus = endStatus;
+    }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -188,13 +204,14 @@ public class Vaccination implements Serializable {
         return "Vaccination{" +
             "id=" + getId() +
             ", name='" + getName() + "'" +
-            ", birthDate='" + getBirthDate() + "'" +
+            ", age=" + getAge() +
             ", job='" + getJob() + "'" +
             ", phoneNumber='" + getPhoneNumber() + "'" +
             ", address='" + getAddress() + "'" +
             ", dateAndTime='" + getDateAndTime() + "'" +
             ", vaccineType='" + getVaccineType() + "'" +
             ", applicator='" + getApplicator() + "'" +
+            ", endStatus='" + getEndStatus() + "'" +
             "}";
     }
 }

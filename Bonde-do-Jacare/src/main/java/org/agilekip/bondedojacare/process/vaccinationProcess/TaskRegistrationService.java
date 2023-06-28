@@ -74,7 +74,7 @@ public class TaskRegistrationService {
             .findOne(taskRegistrationContext.getVaccinationProcess().getVaccination().getId())
             .orElseThrow();
         vaccinationDTO.setName(taskRegistrationContext.getVaccinationProcess().getVaccination().getName());
-        vaccinationDTO.setBirthDate(taskRegistrationContext.getVaccinationProcess().getVaccination().getBirthDate());
+        vaccinationDTO.setAge(taskRegistrationContext.getVaccinationProcess().getVaccination().getAge());
         vaccinationDTO.setJob(taskRegistrationContext.getVaccinationProcess().getVaccination().getJob());
         vaccinationDTO.setPhoneNumber(taskRegistrationContext.getVaccinationProcess().getVaccination().getPhoneNumber());
         vaccinationDTO.setAddress(taskRegistrationContext.getVaccinationProcess().getVaccination().getAddress());

@@ -21,15 +21,15 @@
               />
             </div>
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('bondeDoJacareApp.taskRegistration.birthDate')">birthDate</label>
+              <label class="form-control-label" v-text="$t('bondeDoJacareApp.taskRegistration.age')">age</label>
               <input
                 readonly
                 type="text"
                 class="form-control"
-                name="birthDate"
-                id="vaccination-birthDate"
-                data-cy="birthDate"
-                v-model="taskContext.vaccinationProcess.vaccination.birthDate"
+                name="age"
+                id="vaccination-age"
+                data-cy="age"
+                v-model="taskContext.vaccinationProcess.vaccination.age"
               />
             </div>
             <div class="form-group">

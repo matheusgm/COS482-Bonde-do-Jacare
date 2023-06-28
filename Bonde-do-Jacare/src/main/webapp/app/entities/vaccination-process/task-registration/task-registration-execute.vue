@@ -27,24 +27,20 @@
               />
             </div>
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('bondeDoJacareApp.taskRegistration.birthDate')" for="task-registration-birthDate"
-                >Birth Date</label
-              >
-              <b-input-group class="mb-3">
-                <b-form-input
-                  id="task-registration-birthDate"
-                  readonly
-                  data-cy="birthDate"
-                  type="text"
-                  class="form-control"
-                  name="birthDate"
-                  :class="{
-                    valid: !$v.taskContext.vaccinationProcess.vaccination.birthDate.$invalid,
-                    invalid: $v.taskContext.vaccinationProcess.vaccination.birthDate.$invalid,
-                  }"
-                  v-model="$v.taskContext.vaccinationProcess.vaccination.birthDate.$model"
-                />
-              </b-input-group>
+              <label class="form-control-label" v-text="$t('bondeDoJacareApp.taskRegistration.age')" for="task-registration-age">Age</label>
+              <input
+                type="number"
+                class="form-control"
+                name="age"
+                id="task-registration-age"
+                readonly
+                data-cy="age"
+                :class="{
+                  valid: !$v.taskContext.vaccinationProcess.vaccination.age.$invalid,
+                  invalid: $v.taskContext.vaccinationProcess.vaccination.age.$invalid,
+                }"
+                v-model.number="$v.taskContext.vaccinationProcess.vaccination.age.$model"
+              />
             </div>
             <div class="form-group">
               <label class="form-control-label" v-text="$t('bondeDoJacareApp.taskRegistration.job')" for="task-registration-job">Job</label>

@@ -13,10 +13,10 @@
             <span>{{ vaccination.name }}</span>
           </dd>
           <dt>
-            <span v-text="$t('bondeDoJacareApp.vaccination.birthDate')">Birth Date</span>
+            <span v-text="$t('bondeDoJacareApp.vaccination.age')">Age</span>
           </dt>
           <dd>
-            <span>{{ vaccination.birthDate }}</span>
+            <span>{{ vaccination.age }}</span>
           </dd>
           <dt>
             <span v-text="$t('bondeDoJacareApp.vaccination.job')">Job</span>
@@ -53,6 +53,12 @@
           </dt>
           <dd>
             <span>{{ vaccination.applicator }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('bondeDoJacareApp.vaccination.endStatus')">End Status</span>
+          </dt>
+          <dd>
+            <span>{{ vaccination.endStatus }}</span>
           </dd>
         </dl>
         <button type="submit" v-on:click.prevent="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

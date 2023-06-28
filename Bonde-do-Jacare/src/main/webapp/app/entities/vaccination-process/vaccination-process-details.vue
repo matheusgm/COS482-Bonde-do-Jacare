@@ -30,15 +30,15 @@
               </div>
               <div class="card-body py-0">
                 <div class="form-group">
-                  <label class="form-control-label" v-text="$t('bondeDoJacareApp.vaccinationProcess.birthDate')">birthDate</label>
+                  <label class="form-control-label" v-text="$t('bondeDoJacareApp.vaccinationProcess.age')">age</label>
                   <input
                     readonly
                     type="text"
                     class="form-control"
-                    name="birthDate"
-                    id="vaccination-birthDate"
-                    data-cy="birthDate"
-                    v-model="vaccinationProcess.vaccination.birthDate"
+                    name="age"
+                    id="vaccination-age"
+                    data-cy="age"
+                    v-model="vaccinationProcess.vaccination.age"
                   />
                 </div>
               </div>
@@ -123,6 +123,20 @@
                     id="vaccination-applicator"
                     data-cy="applicator"
                     v-model="vaccinationProcess.vaccination.applicator"
+                  />
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="form-group">
+                  <label class="form-control-label" v-text="$t('bondeDoJacareApp.vaccinationProcess.endStatus')">endStatus</label>
+                  <input
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="endStatus"
+                    id="vaccination-endStatus"
+                    data-cy="endStatus"
+                    v-model="vaccinationProcess.vaccination.endStatus"
                   />
                 </div>
               </div>

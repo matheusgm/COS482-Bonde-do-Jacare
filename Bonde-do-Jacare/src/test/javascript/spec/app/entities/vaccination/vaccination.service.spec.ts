@@ -33,14 +33,13 @@ describe('Service Tests', () => {
     beforeEach(() => {
       service = new VaccinationService();
       currentDate = new Date();
-      elemDefault = new Vaccination(0, 'AAAAAAA', currentDate, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', currentDate, 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new Vaccination(0, 'AAAAAAA', 0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', currentDate, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
       it('should find an element', async () => {
         const returnedFromService = Object.assign(
           {
-            birthDate: dayjs(currentDate).format(DATE_FORMAT),
             dateAndTime: dayjs(currentDate).format(DATE_FORMAT),
           },
           elemDefault
@@ -66,19 +65,19 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             name: 'BBBBBB',
-            birthDate: dayjs(currentDate).format(DATE_FORMAT),
+            age: 1,
             job: 'BBBBBB',
             phoneNumber: 'BBBBBB',
             address: 'BBBBBB',
             dateAndTime: dayjs(currentDate).format(DATE_FORMAT),
             vaccineType: 'BBBBBB',
             applicator: 'BBBBBB',
+            endStatus: 'BBBBBB',
           },
           elemDefault
         );
         const expected = Object.assign(
           {
-            birthDate: currentDate,
             dateAndTime: currentDate,
           },
           returnedFromService

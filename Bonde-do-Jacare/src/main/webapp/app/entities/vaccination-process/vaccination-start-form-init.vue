@@ -37,38 +37,22 @@
                 <div class="form-group">
                   <label
                     class="form-control-label"
-                    v-text="$t('bondeDoJacareApp.vaccinationStartForm.birthDate')"
-                    for="vaccination-start-form-birthDate"
-                    >Birth Date</label
+                    v-text="$t('bondeDoJacareApp.vaccinationStartForm.age')"
+                    for="vaccination-start-form-age"
+                    >Age</label
                   >
-                  <b-input-group class="mb-3">
-                    <b-input-group-prepend>
-                      <b-form-datepicker
-                        aria-controls="vaccination-start-form-birthDate"
-                        v-model="$v.vaccinationProcess.vaccination.birthDate.$model"
-                        name="birthDate"
-                        class="form-control"
-                        :locale="currentLanguage"
-                        button-only
-                        today-button
-                        reset-button
-                        close-button
-                      >
-                      </b-form-datepicker>
-                    </b-input-group-prepend>
-                    <b-form-input
-                      id="vaccination-start-form-birthDate"
-                      data-cy="birthDate"
-                      type="text"
-                      class="form-control"
-                      name="birthDate"
-                      :class="{
-                        valid: !$v.vaccinationProcess.vaccination.birthDate.$invalid,
-                        invalid: $v.vaccinationProcess.vaccination.birthDate.$invalid,
-                      }"
-                      v-model="$v.vaccinationProcess.vaccination.birthDate.$model"
-                    />
-                  </b-input-group>
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="age"
+                    id="vaccination-start-form-age"
+                    data-cy="age"
+                    :class="{
+                      valid: !$v.vaccinationProcess.vaccination.age.$invalid,
+                      invalid: $v.vaccinationProcess.vaccination.age.$invalid,
+                    }"
+                    v-model.number="$v.vaccinationProcess.vaccination.age.$model"
+                  />
                 </div>
                 <div class="form-group">
                   <label
