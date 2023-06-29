@@ -27,8 +27,6 @@ public class VaccinationDTO implements Serializable {
 
     private String applicator;
 
-    private String endStatus;
-
     public Long getId() {
         return id;
     }
@@ -101,14 +99,6 @@ public class VaccinationDTO implements Serializable {
         this.applicator = applicator;
     }
 
-    public String getEndStatus() {
-        return endStatus;
-    }
-
-    public void setEndStatus(String endStatus) {
-        this.endStatus = endStatus;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -143,7 +133,6 @@ public class VaccinationDTO implements Serializable {
             ", dateAndTime='" + getDateAndTime() + "'" +
             ", vaccineType='" + getVaccineType() + "'" +
             ", applicator='" + getApplicator() + "'" +
-            ", endStatus='" + getEndStatus() + "'" +
             "}";
     }
 }

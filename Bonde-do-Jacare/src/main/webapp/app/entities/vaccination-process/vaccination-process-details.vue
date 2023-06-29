@@ -126,20 +126,6 @@
                   />
                 </div>
               </div>
-              <div class="card-body py-0">
-                <div class="form-group">
-                  <label class="form-control-label" v-text="$t('bondeDoJacareApp.vaccinationProcess.endStatus')">endStatus</label>
-                  <input
-                    readonly
-                    type="text"
-                    class="form-control"
-                    name="endStatus"
-                    id="vaccination-endStatus"
-                    data-cy="endStatus"
-                    v-model="vaccinationProcess.vaccination.endStatus"
-                  />
-                </div>
-              </div>
             </div>
           </template>
         </akip-show-process-instance>

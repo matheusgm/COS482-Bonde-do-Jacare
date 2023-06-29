@@ -25,8 +25,7 @@
       "address": "Address",
       "dateAndTime": "Date And Time",
       "vaccineType": "Vaccine Type",
-      "applicator": "Applicator",
-      "endStatus": "End Status"
+      "applicator": "Applicator"
     }
   }
 }

@@ -33,7 +33,7 @@ describe('Service Tests', () => {
     beforeEach(() => {
       service = new VaccinationService();
       currentDate = new Date();
-      elemDefault = new Vaccination(0, 'AAAAAAA', 0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', currentDate, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new Vaccination(0, 'AAAAAAA', 0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', currentDate, 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -72,7 +72,6 @@ describe('Service Tests', () => {
             dateAndTime: dayjs(currentDate).format(DATE_FORMAT),
             vaccineType: 'BBBBBB',
             applicator: 'BBBBBB',
-            endStatus: 'BBBBBB',
           },
           elemDefault
         );
