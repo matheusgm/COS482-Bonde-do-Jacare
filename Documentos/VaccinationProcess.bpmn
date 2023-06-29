@@ -52,7 +52,7 @@
     <bpmn:sequenceFlow id="Flow_14jv6vk" sourceRef="Activity_1q1ukxo" targetRef="Activity_1bj1nkw" />
     <bpmn:sequenceFlow id="Flow_04tclbc" sourceRef="Activity_1nqqhtf" targetRef="Gateway_1p4zq4o" />
     <bpmn:serviceTask id="Activity_1q1ukxo" name="Update Status Vacinado" camunda:delegateExpression="${updateStatusDelegate}">
-      <bpmn:incoming>Flow_07ter8s</bpmn:incoming>
+      <bpmn:incoming>Flow_0r7cb17</bpmn:incoming>
       <bpmn:outgoing>Flow_14jv6vk</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:exclusiveGateway id="Gateway_1p4zq4o" camunda:asyncBefore="true">
@@ -60,17 +60,12 @@
       <bpmn:incoming>Flow_0iap4c9</bpmn:incoming>
       <bpmn:outgoing>Flow_0r7cb17</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:sequenceFlow id="Flow_0r7cb17" sourceRef="Gateway_1p4zq4o" targetRef="Activity_0b2bnk2" />
+    <bpmn:sequenceFlow id="Flow_0r7cb17" sourceRef="Gateway_1p4zq4o" targetRef="Activity_1q1ukxo" />
     <bpmn:sequenceFlow id="Flow_1lze1eb" sourceRef="Activity_1bj1nkw" targetRef="Event_118cav3" />
     <bpmn:userTask id="Activity_1bj1nkw" name="Teste22">
       <bpmn:incoming>Flow_14jv6vk</bpmn:incoming>
       <bpmn:outgoing>Flow_1lze1eb</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:userTask id="Activity_0b2bnk2" name="Teste11">
-      <bpmn:incoming>Flow_0r7cb17</bpmn:incoming>
-      <bpmn:outgoing>Flow_07ter8s</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:sequenceFlow id="Flow_07ter8s" sourceRef="Activity_0b2bnk2" targetRef="Activity_1q1ukxo" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="VaccinationProcess">
@@ -102,10 +97,6 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_0rfu388" bpmnElement="Gateway_1p4zq4o" isMarkerVisible="true">
         <dc:Bounds x="1435" y="202" width="50" height="50" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_0akbgk7" bpmnElement="Activity_0b2bnk2">
-        <dc:Bounds x="1510" y="187" width="100" height="80" />
-        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_118cav3_di" bpmnElement="Event_118cav3">
         <dc:Bounds x="1972" y="209" width="36" height="36" />
@@ -174,15 +165,11 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0r7cb17_di" bpmnElement="Flow_0r7cb17">
         <di:waypoint x="1485" y="227" />
-        <di:waypoint x="1510" y="227" />
+        <di:waypoint x="1660" y="227" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1lze1eb_di" bpmnElement="Flow_1lze1eb">
         <di:waypoint x="1910" y="227" />
         <di:waypoint x="1972" y="227" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_07ter8s_di" bpmnElement="Flow_07ter8s">
-        <di:waypoint x="1610" y="227" />
-        <di:waypoint x="1660" y="227" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

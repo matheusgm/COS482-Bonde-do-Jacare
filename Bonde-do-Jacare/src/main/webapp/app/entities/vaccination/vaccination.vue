@@ -26,7 +26,6 @@
             <th scope="row"><span v-text="$t('bondeDoJacareApp.vaccination.dateAndTime')">Date And Time</span></th>
             <th scope="row"><span v-text="$t('bondeDoJacareApp.vaccination.vaccineType')">Vaccine Type</span></th>
             <th scope="row"><span v-text="$t('bondeDoJacareApp.vaccination.applicator')">Applicator</span></th>
-            <th scope="row"><span v-text="$t('bondeDoJacareApp.vaccination.endStatus')">End Status</span></th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -43,7 +42,6 @@
             <td>{{ vaccination.dateAndTime }}</td>
             <td>{{ vaccination.vaccineType }}</td>
             <td>{{ vaccination.applicator }}</td>
-            <td>{{ vaccination.endStatus }}</td>
             <td class="text-right">
               <div class="btn-group">
                 <router-link :to="{ name: 'VaccinationView', params: { vaccinationId: vaccination.id } }" custom v-slot="{ navigate }">

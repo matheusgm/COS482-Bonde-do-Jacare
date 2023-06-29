@@ -8,7 +8,6 @@ export interface IVaccination {
   dateAndTime?: Date | null;
   vaccineType?: string | null;
   applicator?: string | null;
-  endStatus?: string | null;
 }
 
 export class Vaccination implements IVaccination {
@@ -21,7 +20,6 @@ export class Vaccination implements IVaccination {
     public address?: string | null,
     public dateAndTime?: Date | null,
     public vaccineType?: string | null,
-    public applicator?: string | null,
-    public endStatus?: string | null
+    public applicator?: string | null
   ) {}
 }

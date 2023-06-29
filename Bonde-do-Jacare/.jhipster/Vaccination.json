@@ -31,10 +31,6 @@
     {
       "fieldName": "applicator",
       "fieldType": "String"
-    },
-    {
-      "fieldName": "endStatus",
-      "fieldType": "String"
     }
   ],
   "relationships": [],

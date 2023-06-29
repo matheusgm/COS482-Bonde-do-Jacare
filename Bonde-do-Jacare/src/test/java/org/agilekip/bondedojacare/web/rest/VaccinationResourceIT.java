@@ -57,9 +57,6 @@ class VaccinationResourceIT {
     private static final String DEFAULT_APPLICATOR = "AAAAAAAAAA";
     private static final String UPDATED_APPLICATOR = "BBBBBBBBBB";
 
-    private static final String DEFAULT_END_STATUS = "AAAAAAAAAA";
-    private static final String UPDATED_END_STATUS = "BBBBBBBBBB";
-
     private static final String ENTITY_API_URL = "/api/vaccinations";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -95,8 +92,7 @@ class VaccinationResourceIT {
             .address(DEFAULT_ADDRESS)
             .dateAndTime(DEFAULT_DATE_AND_TIME)
             .vaccineType(DEFAULT_VACCINE_TYPE)
-            .applicator(DEFAULT_APPLICATOR)
-            .endStatus(DEFAULT_END_STATUS);
+            .applicator(DEFAULT_APPLICATOR);
         return vaccination;
     }
 
@@ -115,8 +111,7 @@ class VaccinationResourceIT {
             .address(UPDATED_ADDRESS)
             .dateAndTime(UPDATED_DATE_AND_TIME)
             .vaccineType(UPDATED_VACCINE_TYPE)
-            .applicator(UPDATED_APPLICATOR)
-            .endStatus(UPDATED_END_STATUS);
+            .applicator(UPDATED_APPLICATOR);
         return vaccination;
     }
 
@@ -144,8 +139,7 @@ class VaccinationResourceIT {
             .andExpect(jsonPath("$.[*].address").value(hasItem(DEFAULT_ADDRESS)))
             .andExpect(jsonPath("$.[*].dateAndTime").value(hasItem(DEFAULT_DATE_AND_TIME.toString())))
             .andExpect(jsonPath("$.[*].vaccineType").value(hasItem(DEFAULT_VACCINE_TYPE)))
-            .andExpect(jsonPath("$.[*].applicator").value(hasItem(DEFAULT_APPLICATOR)))
-            .andExpect(jsonPath("$.[*].endStatus").value(hasItem(DEFAULT_END_STATUS)));
+            .andExpect(jsonPath("$.[*].applicator").value(hasItem(DEFAULT_APPLICATOR)));
     }
 
     @Test
@@ -167,8 +161,7 @@ class VaccinationResourceIT {
             .andExpect(jsonPath("$.address").value(DEFAULT_ADDRESS))
             .andExpect(jsonPath("$.dateAndTime").value(DEFAULT_DATE_AND_TIME.toString()))
             .andExpect(jsonPath("$.vaccineType").value(DEFAULT_VACCINE_TYPE))
-            .andExpect(jsonPath("$.applicator").value(DEFAULT_APPLICATOR))
-            .andExpect(jsonPath("$.endStatus").value(DEFAULT_END_STATUS));
+            .andExpect(jsonPath("$.applicator").value(DEFAULT_APPLICATOR));
     }
 
     @Test

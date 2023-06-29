@@ -45,9 +45,6 @@ public class Vaccination implements Serializable {
     @Column(name = "applicator")
     private String applicator;
 
-    @Column(name = "end_status")
-    private String endStatus;
-
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;
@@ -166,19 +163,6 @@ public class Vaccination implements Serializable {
         this.applicator = applicator;
     }
 
-    public String getEndStatus() {
-        return this.endStatus;
-    }
-
-    public Vaccination endStatus(String endStatus) {
-        this.endStatus = endStatus;
-        return this;
-    }
-
-    public void setEndStatus(String endStatus) {
-        this.endStatus = endStatus;
-    }
-
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -211,7 +195,6 @@ public class Vaccination implements Serializable {
             ", dateAndTime='" + getDateAndTime() + "'" +
             ", vaccineType='" + getVaccineType() + "'" +
             ", applicator='" + getApplicator() + "'" +
-            ", endStatus='" + getEndStatus() + "'" +
             "}";
     }
 }
